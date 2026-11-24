@@ -1,19 +1,228 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audit Module</title>
-    <script>
-        if (window.innerWidth <= 768) {
-            window.location.replace("Mobile.html");
-        } else {
-            window.location.replace("web.html");
+    <meta name="theme-color" content="#0B1730">
+
+    <title>Audit Module | Platform Selection</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    </script>
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at top left, #1d3b68, transparent 45%),
+                linear-gradient(135deg, #071326, #102849, #071326);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 20px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 10px 35px rgba(37,99,235,.35);
+        }
+
+        .subtitle {
+            color: #a9bbd3;
+            margin-top: 12px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .heading {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .selection {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-top: 45px;
+        }
+
+        .card {
+            text-decoration: none;
+            color: white;
+            padding: 35px 22px;
+            border: 1px solid rgba(255,255,255,.13);
+            border-radius: 22px;
+            background: rgba(255,255,255,.07);
+            backdrop-filter: blur(15px);
+            transition: .3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            background: rgba(255,255,255,.13);
+            border-color: #60a5fa;
+            box-shadow: 0 15px 40px rgba(0,0,0,.25);
+        }
+
+        .icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            color: #b5c5dc;
+            font-size: 14px;
+            line-height: 1.6;
+            min-height: 45px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: .5px;
+        }
+
+        .web .btn {
+            background: #2563eb;
+        }
+
+        .mobile .btn {
+            background: #059669;
+        }
+
+        .web:hover .btn {
+            background: #1d4ed8;
+        }
+
+        .mobile:hover .btn {
+            background: #047857;
+        }
+
+        .footer {
+            margin-top: 45px;
+            font-size: 12px;
+            color: #8196b5;
+            line-height: 1.8;
+        }
+
+        @media(max-width: 600px) {
+            .selection {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin-top: 30px;
+            }
+
+            .card {
+                padding: 25px 18px;
+            }
+
+            .icon {
+                font-size: 45px;
+                margin-bottom: 12px;
+            }
+
+            .card h2 {
+                font-size: 20px;
+            }
+
+            .footer {
+                margin-top: 30px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <p>Loading Audit Module...</p>
+
+    <main class="container">
+
+        <div class="logo">🛡️</div>
+
+        <h1 class="heading">AUDIT MODULE</h1>
+
+        <p class="subtitle">
+            Welcome to Audit Management System<br>
+            Please select your platform to continue.
+        </p>
+
+        <div class="selection">
+
+            <!-- WEB USER -->
+            <a href="./web.html" class="card web">
+
+                <div class="icon">🖥️</div>
+
+                <h2>WEB USER</h2>
+
+                <p>
+                    Access the Desktop Audit Module
+                    with the full web interface.
+                </p>
+
+                <span class="btn">
+                    ENTER WEB PORTAL →
+                </span>
+
+            </a>
+
+            <!-- MOBILE USER -->
+            <a href="./Mobile.html" class="card mobile">
+
+                <div class="icon">📱</div>
+
+                <h2>MOBILE USER</h2>
+
+                <p>
+                    Access the Mobile Audit Module
+                    with the mobile interface.
+                </p>
+
+                <span class="btn">
+                    ENTER MOBILE PORTAL →
+                </span>
+
+            </a>
+
+        </div>
+
+        <footer class="footer">
+            AUDIT MANAGEMENT SYSTEM<br>
+            Authorized Users Only
+        </footer>
+
+    </main>
+
 </body>
 </html>
